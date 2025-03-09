@@ -1,0 +1,247 @@
+import React from "react";
+import {
+  BarChart3,
+  Brain,
+  Search,
+  MessageSquareMore,
+  TrendingUp,
+  Users,
+  Zap,
+  Shield,
+  Code2,
+  GitBranch,
+  Puzzle,
+  Globe2,
+  Clock,
+  Workflow,
+} from "lucide-react";
+import { useTranslation } from "react-i18next";
+
+function Features() {
+  const { t } = useTranslation();
+
+  return (
+    <div className="container mx-auto px-6 py-16">
+      {/* Hero Section */}
+      <div className="text-center max-w-4xl mx-auto mb-20">
+        <h1 className="text-5xl font-bold text-white mb-6">
+          {t("features.hero.title")}{" "}
+          <span className="text-blue-400">
+            {t("features.hero.titleHighlight")}
+          </span>
+        </h1>
+        <p className="text-xl text-gray-300">
+          {t("features.hero.description")}
+        </p>
+      </div>
+
+      {/* Analytics Section */}
+      <section className="mb-32">
+        <div className="bg-slate-800 rounded-2xl p-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-white mb-6">
+                {t("features.analytics.title")}
+              </h2>
+              <div className="space-y-6">
+                <FeaturePoint
+                  icon={<BarChart3 className="w-6 h-6 text-blue-400" />}
+                  title={t("features.analytics.usageInsights.title")}
+                  description={t(
+                    "features.analytics.usageInsights.description"
+                  )}
+                />
+                <FeaturePoint
+                  icon={<Search className="w-6 h-6 text-blue-400" />}
+                  title={t("features.analytics.searchPatterns.title")}
+                  description={t(
+                    "features.analytics.searchPatterns.description"
+                  )}
+                />
+                <FeaturePoint
+                  icon={<MessageSquareMore className="w-6 h-6 text-blue-400" />}
+                  title={t("features.analytics.questionAnalysis.title")}
+                  description={t(
+                    "features.analytics.questionAnalysis.description"
+                  )}
+                />
+              </div>
+            </div>
+            <div className="relative">
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"
+                alt="Analytics Dashboard"
+                className="rounded-xl shadow-2xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Continuous Learning Section */}
+      <section className="mb-32">
+        <div className="bg-slate-800 rounded-2xl p-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="order-2 lg:order-1">
+              <img
+                src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&w=1200&q=80"
+                alt="AI Learning"
+                className="rounded-xl shadow-2xl"
+              />
+            </div>
+            <div className="order-1 lg:order-2">
+              <h2 className="text-3xl font-bold text-white mb-6">
+                {t("features.learning.title")}
+              </h2>
+              <div className="space-y-6">
+                <FeaturePoint
+                  icon={<Brain className="w-6 h-6 text-blue-400" />}
+                  title={t("features.learning.adaptiveIntelligence.title")}
+                  description={t(
+                    "features.learning.adaptiveIntelligence.description"
+                  )}
+                />
+                <FeaturePoint
+                  icon={<TrendingUp className="w-6 h-6 text-blue-400" />}
+                  title={t("features.learning.performanceOptimization.title")}
+                  description={t(
+                    "features.learning.performanceOptimization.description"
+                  )}
+                />
+                <FeaturePoint
+                  icon={<Zap className="w-6 h-6 text-blue-400" />}
+                  title={t("features.learning.smartSuggestions.title")}
+                  description={t(
+                    "features.learning.smartSuggestions.description"
+                  )}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* API Documentation Section */}
+      <section className="mb-32">
+        <div className="bg-slate-800 rounded-2xl p-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-white mb-6">
+                {t("features.apiDocs.title")}
+              </h2>
+              <div className="space-y-6">
+                <FeaturePoint
+                  icon={<Code2 className="w-6 h-6 text-blue-400" />}
+                  title={t("features.apiDocs.autoGenerated.title")}
+                  description={t("features.apiDocs.autoGenerated.description")}
+                />
+                <FeaturePoint
+                  icon={<GitBranch className="w-6 h-6 text-blue-400" />}
+                  title={t("features.apiDocs.versionControl.title")}
+                  description={t("features.apiDocs.versionControl.description")}
+                />
+                <FeaturePoint
+                  icon={<Puzzle className="w-6 h-6 text-blue-400" />}
+                  title={t("features.apiDocs.apiExplorer.title")}
+                  description={t("features.apiDocs.apiExplorer.description")}
+                />
+              </div>
+            </div>
+            <div className="relative">
+              <img
+                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80"
+                alt="API Documentation"
+                className="rounded-xl shadow-2xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Global Features Grid */}
+      <section className="mb-32">
+        <h2 className="text-3xl font-bold text-white text-center mb-12">
+          {t("features.global.title")}
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="bg-slate-800 p-8 rounded-xl">
+            <Globe2 className="w-8 h-8 text-blue-400 mb-4" />
+            <h3 className="text-xl font-bold text-white mb-3">
+              {t("features.global.multiLanguage.title")}
+            </h3>
+            <p className="text-gray-300">
+              {t("features.global.multiLanguage.description")}
+            </p>
+          </div>
+          <div className="bg-slate-800 p-8 rounded-xl">
+            <Clock className="w-8 h-8 text-blue-400 mb-4" />
+            <h3 className="text-xl font-bold text-white mb-3">
+              {t("features.global.versionHistory.title")}
+            </h3>
+            <p className="text-gray-300">
+              {t("features.global.versionHistory.description")}
+            </p>
+          </div>
+          <div className="bg-slate-800 p-8 rounded-xl">
+            <Workflow className="w-8 h-8 text-blue-400 mb-4" />
+            <h3 className="text-xl font-bold text-white mb-3">
+              {t("features.global.workflow.title")}
+            </h3>
+            <p className="text-gray-300">
+              {t("features.global.workflow.description")}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Enterprise Features */}
+      <section className="mb-32">
+        <h2 className="text-3xl font-bold text-white text-center mb-12">
+          {t("features.enterprise.title")}
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-slate-800 p-8 rounded-xl">
+            <Users className="w-8 h-8 text-blue-400 mb-4" />
+            <h3 className="text-xl font-bold text-white mb-3">
+              {t("features.enterprise.collaboration.title")}
+            </h3>
+            <p className="text-gray-300">
+              {t("features.enterprise.collaboration.description")}
+            </p>
+          </div>
+          <div className="bg-slate-800 p-8 rounded-xl">
+            <Shield className="w-8 h-8 text-blue-400 mb-4" />
+            <h3 className="text-xl font-bold text-white mb-3">
+              {t("features.enterprise.security.title")}
+            </h3>
+            <p className="text-gray-300">
+              {t("features.enterprise.security.description")}
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function FeaturePoint({
+  icon,
+  title,
+  description,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}) {
+  return (
+    <div className="flex items-start space-x-4">
+      <div className="flex-shrink-0 mt-1">{icon}</div>
+      <div>
+        <h3 className="text-lg font-semibold text-white mb-1">{title}</h3>
+        <p className="text-gray-300">{description}</p>
+      </div>
+    </div>
+  );
+}
+
+export default Features;
